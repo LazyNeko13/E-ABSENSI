@@ -154,8 +154,8 @@ $db['default'] = array(
 
 	'hostname' => 'localhost',
 
-	'username' => 'alphausr',
-	'password' => 't1d4k4d4passw0rd',
+	'username' => 'root',
+	'password' => '',
 	'database' => 'digital_school',
 
 	'dbdriver' => 'mysqli',
