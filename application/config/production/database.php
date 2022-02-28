@@ -154,9 +154,9 @@ $db['default'] = array(
 
 	'hostname' => 'localhost',
 
-	'username' => 'alphausr',
-	'password' => 't1d4k4d4passw0rd',
-	'database' => 'digital_school',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'e_absensi',
 
 	'dbdriver' => 'mysqli',
 
