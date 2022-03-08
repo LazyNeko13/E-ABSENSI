@@ -19,7 +19,10 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
 
     <!-- nouislider CSS -->
-    <link href="<?= base_url(); ?>assets/vendor/nouislider/nouislider.min.css" rel="stylesheet">
+    <!-- <link href="<?= base_url(); ?>assets/vendor/nouislider/nouislider.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/login/util.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/login/main.css">
 
     <title>
       
@@ -30,15 +33,7 @@
         <?php endif ?>
     </title>
 
-    <style type="text/css">
-      /*.card-img-left {
-        width: 50%;
-        background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
-        background-size: cover;
-      }*/
-
-      
-
+    <!-- <style type="text/css">
       .btn-login {
         background-color: #2C88C0;
         color: #FFFFFF;
@@ -100,7 +95,8 @@
       input:focus .form-control{
         outline: none;
       }
-    </style>
+    </style> -->
+
   </head>
   <body>
       <?php 
@@ -108,7 +104,7 @@
     echo alert_show($this->session->flashdata('judul'), $this->session->flashdata('teks'), $this->session->flashdata('icon'), $this->session->flashdata('gambar') );
 
 ?>
-     <div class="container mt-5">
+      <!-- <div class="container mt-5">
         <div class="row d-flex justify-content-center position">
            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden" style="max-width: 80%;">
               <div class="col-6 col-xl-6 mx-auto images">
@@ -164,11 +160,51 @@
               </div>
           </div>
         </div>
+      </div> -->
+
+      <div class="limiter">
+        <div class="container-login100">
+          <div class="wrap-login100 pt-3 pb-3 row">
+            <div class="col-md-6 col-lg-6 mx-auto bg-image">
+              <img src="<?= base_url('assets/img/bg-1.png')?>" class="img-fluid">
+            </div>
+            
+                <div class="col-md-6 col-lg-6 mx-auto form-login">
+                  <div class="judul text-center pt-5">
+                    <h1>Login <span class="text-primary">GDS</span></h1>	
+                    <p class="mt-2 fs-17">Isikan NIS dan Password untuk bisa masuk ke aplikasi</p>
+                  </div>
+
+                  <form class="login100-form validate-form" method="POST" action="<?= base_url('auth'); ?>">
+                    <div class="wrap-input100 validate-input m-t-75 m-b-35" data-validate = "Masukkan NIS / NIP">
+                      <input class="input100" type="text" id="nis_nip" name="nis_nip"  value="<?= $this->session->flashdata('nis_nip'); ?>">
+                      <span class="focus-input100" data-placeholder="NIS / NIP"></span>
+                    </div>
+                    <?= form_error('nis_nip','<small class="text-danger pl-3">','</small>'); ?>
+
+                    <div class="wrap-input100 validate-input m-b-75" data-validate="Masukkan Password">
+                      <input class="input100" type="password" id="password" name="password">
+                      <span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+                    <?= form_error('password','<small class="text-danger pl-3">','</small>'); ?>
+
+                    <div class="container-login100-form-btn">
+                      <button class="login100-form-btn" type="submit" disabled>
+                        Masuk
+                      </button>
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </div>
       </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="<?= base_url(); ?>assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url('assets/ajax/auth.js') ?>"></script>
     <script src="<?= base_url('assets/js/umum/alert/sweetalert2.all.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/umum/alert/scriptalert.js') ?>"></script>
+
+    <script src="<?= base_url('assets/js/login/main.js')?>"></script>
   </body>
 </html>
